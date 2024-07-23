@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    int dia;
+    int mes;
+    int ano;
+} Data;
+
+typedef struct {
+    int codigo;
+    char nome[200];
+    Data datNasc; // Referência à struct Data
+} Aluno;
+
+int main() {
+    Aluno aluno_especial;
+
+    aluno_especial.codigo = 0;
+    strcpy(aluno_especial.nome, "Teste de Nome"); // Exemplo de inicialização
+
+    aluno_especial.datNasc.dia = 0;
+    aluno_especial.datNasc.mes = 0;
+    aluno_especial.datNasc.ano = 0;
+
+    printf("\nO código do aluno especial é: %d", aluno_especial.codigo);
+    printf("\nO nome do aluno especial é: %s", aluno_especial.nome);
+    printf("\nA data de nascimento do aluno especial é: %d / %d / %d\n",
+           aluno_especial.datNasc.dia, aluno_especial.datNasc.mes, aluno_especial.datNasc.ano);
+
+    printf("\nDigite o código do aluno especial: ");
+    scanf("%d", &aluno_especial.codigo);
+
+    printf("Digite o nome do aluno especial: ");
+    scanf("%s", aluno_especial.nome);
+
+    printf("Digite o dia do nascimento do aluno especial: ");
+    scanf("%d", &aluno_especial.datNasc.dia);
+
+    printf("Digite o mês do nascimento do aluno especial: ");
+    scanf("%d", &aluno_especial.datNasc.mes);
+
+    printf("Digite o ano do nascimento do aluno especial: ");
+    scanf("%d", &aluno_especial.datNasc.ano);
+
+    printf("\nO código do aluno especial é: %d", aluno_especial.codigo);
+    printf("\nO nome do aluno especial é: %s", aluno_especial.nome);
+    printf("\nA data de nascimento do aluno especial é: %d / %d / %d\n",
+           aluno_especial.datNasc.dia, aluno_especial.datNasc.mes, aluno_especial.datNasc.ano);
+
+    return 0;
+}
